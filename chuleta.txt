@@ -1,0 +1,19 @@
+
+Información básica de Laravel 8
+
+-En la carpeta storage hay que dar permisos a algunas carpetas (canta el error).
+
+-La carpeta pública que hay que dejar accesible es public.
+
+-Las rutas se definen en routes/web.php
+
+-Los controladores se crean desde consola desde la ruta del proyecto:
+php artisan make:controller ElementoController
+
+-Vistas:
+	-Las vistas se colocan en resources/views/
+	-Las plantillas tienen que ser *.blade.php
+	-Se usa la función @yield('elemento') para rellenar las plantillas.
+
+
+-Acceso base de datos: https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=5
