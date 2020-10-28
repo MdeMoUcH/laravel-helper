@@ -33,12 +33,24 @@ class ElementoController extends Controller
 		$request->validate([
 			'name' => 'required|max:255',
 			'version' => 'required|max:20']);
-			
+
+		/*
 		$elemento = new Elemento();
 		$elemento->name = $request->name;
 		$elemento->version = $request->version;
 		$elemento->description = $request->description;
 		$elemento->save();
+		*/
+		
+		/*
+		$elemento = Elemento::create([
+			'name' => $request->name,
+			'version' => $request->version,
+			'description' => $request->description
+			]);
+		*/
+
+		$elemento = Elemento::create($request->all());
 
 		return redirect()->route('elementos.show',$elemento->id);
 	}
@@ -67,11 +79,14 @@ class ElementoController extends Controller
 		$request->validate([
 			'name' => 'required|max:255',
 			'version' => 'required|max:20']);
-			
+
+		/*
 		$elemento->name = $request->name;
 		$elemento->version = $request->version;
 		$elemento->description = $request->description;
 		$elemento->save();
+		*/
+		$elemento->update($request->all());
 		
 		return redirect()->route('elementos.show',$elemento->id);
 	}

@@ -75,4 +75,4 @@ php artisan make:controller ElementoController
 
 
 
-https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=15
+https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=18
