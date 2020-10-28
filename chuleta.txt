@@ -25,18 +25,38 @@ php artisan make:controller ElementoController
 	-Para crear una nueva migración hay que usar: 'php artisan make:migration elementos'
 	-Para crear una nueva migración más elaborada hay que usar: 'php artisan make:migration create_elementos_table'
 	-Para echar atrás una migración hay que usar: 'php artisan migrate:rollback' (Solo echa atrás el último lote de migración)
-	-Para echar todas las migraciones atrás se puede usar: 'php artisan migrate:refresh'
+	-Para echar todas las migraciones atrás se puede usar: 'php artisan migrate:reset'
+	-Para echar todas las migraciones atrás y volverlas a ejecutar hay que usar: 'php artisan migrate:refresh'
 	-Para para modificar tablas hay que usar: 'php artisan make:migration add_nuevocampo_to_elementos'
 	-Para modificar propiedades de campos hay que añadir en el composer.json en la parte require lo siquiente: "doctrine/dbal": "v2.4.2" (y luego hacer un composer update)
 
 
 -ORM Eloquent para relaccionar objetos con la información de la base de datos:
 	-Para crear un modelo: 'php artisan make:model Elemento' (Que usará la tabla elementos)
-	-
+	-Para acceder a tinker: 'php artisan tinker'
+		DENTRO DE TINKER:
+			use App\Models\Elemento;
+			$elemento = new Elemento;
+			$elemento->name = 'xbox';
+			$elemento->version = 'series x';
+			$elemento->description = 'Awesome';
+			$elemento->save();
+	-Seeders:
+		-Para añadir datos para las tablas se pueden meter en database/seeders/DatabaseSeeder.php
+		-Para ejecutar el añadido de los datos es: 'php artisan db:Seed'
+		-Para crear un seeder particular hay que ejecutar: 'php artisan make:seeder ElementosSeeder' y hay que hacer la llamada en DatabaseSeeder.
+		-Se puede hacer un 'php artisan migrate:refresh --seed' que rehace las migraciones y mete los seeders.
+		-Se puede hacer un añadido automático usando un factory, que se crea del siguiente modo: 'php artisan make:factory ElementoFactory'
+		-Los seeders se pueden meter en el DatabaseSeeder sin necesitar su propio seeder al estar automatizado y ser una única linea.
+		
+
+
+		
+		
 
 
 
 
 
 
-https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=6
+https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=12
