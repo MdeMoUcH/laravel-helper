@@ -3,12 +3,15 @@ Información básica de Laravel 8
 
 -En la carpeta storage hay que dar permisos a algunas carpetas (canta el error).
 
+-La configuración de la app está en el archivo '.env'.
+
 -La carpeta pública que hay que dejar accesible es public.
 
 -Las rutas se definen en routes/web.php
 
--Los controladores se crean desde consola desde la ruta del proyecto:
+-Los controladores se crean desde consola desde la ruta del proyecto y hay que añadir en el archivo de rutas cada controlador creado, el comando es el siguiente:
 php artisan make:controller ElementoController
+
 
 -Vistas:
 	-Las vistas se colocan en resources/views/
@@ -16,4 +19,24 @@ php artisan make:controller ElementoController
 	-Se usa la función @yield('elemento') para rellenar las plantillas.
 
 
--Acceso base de datos: https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=5
+-Acceso base de datos:
+	-Se usa el archivo config/database.php, que saca la información del archivo .env
+	-Para ejecutar las migraciones (database/migrations/*) hay que usar 'php artisan migrate' desde la ruta del proyecto.
+	-Para crear una nueva migración hay que usar: 'php artisan make:migration elementos'
+	-Para crear una nueva migración más elaborada hay que usar: 'php artisan make:migration create_elementos_table'
+	-Para echar atrás una migración hay que usar: 'php artisan migrate:rollback' (Solo echa atrás el último lote de migración)
+	-Para echar todas las migraciones atrás se puede usar: 'php artisan migrate:refresh'
+	-Para para modificar tablas hay que usar: 'php artisan make:migration add_nuevocampo_to_elementos'
+	-Para modificar propiedades de campos hay que añadir en el composer.json en la parte require lo siquiente: "doctrine/dbal": "v2.4.2" (y luego hacer un composer update)
+
+
+-ORM Eloquent para relaccionar objetos con la información de la base de datos:
+	-Para crear un modelo: 'php artisan make:model Elemento' (Que usará la tabla elementos)
+	-
+
+
+
+
+
+
+https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=6

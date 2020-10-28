@@ -20,7 +20,7 @@ sudo mv composer.phar /usr/local/bin/composer
 #Librerias necesarias (hace falta tener un lamp):
 sudo apt-get install npm php7.4-xml
 
-#Hace falta tener el mod rewrite activado (activarlo en vhost también) :
+#Hace falta tener el mod rewrite activado (activarlo en vhosts también) :
 sudo a2enmod rewrite
 
 
