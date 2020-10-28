@@ -18,11 +18,17 @@ use App\Http\Controllers\ElementoController;
 
 Route::get('/', HomeController::class);
 
-Route::get('/elementos', ElementoController::class);
+Route::get('/elementos', ElementoController::class)->name('elementos.index');
 
-Route::get('/elementos/crear', [ElementoController::class, 'create']);
+Route::get('/elementos/crear', [ElementoController::class, 'create'])->name('elementos.create');
 
-Route::get('/elementos/{elemento}/{version?}', [ElementoController::class, 'show']);
+Route::post('/elementos/crear', [ElementoController::class, 'store'])->name('elementos.store');
+
+//Route::get('/elementos/{elemento}/{version?}', [ElementoController::class, 'show'])->name('elementos.show');
+Route::get('/elementos/{elemento}', [ElementoController::class, 'show'])->name('elementos.show');
+
+Route::get('/elementos/{elemento}/edit', [ElementoController::class, 'edit'])->name('elementos.edit');
+Route::put('/elementos/{elemento}/save', [ElementoController::class, 'save'])->name('elementos.save');
 
 
 /*

@@ -48,6 +48,16 @@ php artisan make:controller ElementoController
 		-Se puede hacer un 'php artisan migrate:refresh --seed' que rehace las migraciones y mete los seeders.
 		-Se puede hacer un añadido automático usando un factory, que se crea del siguiente modo: 'php artisan make:factory ElementoFactory'
 		-Los seeders se pueden meter en el DatabaseSeeder sin necesitar su propio seeder al estar automatizado y ser una única linea.
+
+	-Consultas con tinker (los comentarios no se los traga):
+		use App\Models\Elemento;
+		$cursos = Elemento::all(); //sacar todos los elementos
+		$cursos = Elemento::select('name','version as v')->where('version','1.0')->orderBy('id','DESC')->get(); //hacer búsquedas
+		$cursos = Elemento::where('version','1.0')->orderBy('id','DESC')->first(); //hacer búsquedas y sacar solo el primero
+		$cursos = Elemento::where('version','1.0')->orderBy('id','DESC')->take(5)->get(); //hacer búsquedas y sacar un número determinado de registros
+		$cursos = Elemento::find(5); //sacar un id determinado
+		$cursos = Elemento::select('name','version')->where('version','>','1.0')->get(); //hacer búsquedas > <
+		$cursos = Elemento::select('name','version')->where('name','like','%ae%')->get(); //hacer búsquedas like..
 		
 
 

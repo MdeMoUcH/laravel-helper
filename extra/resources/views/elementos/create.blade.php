@@ -4,11 +4,13 @@
 
 @section('content')
 <p><b>crear</b></p>
+<form action="{{route('elementos.store')}}" method="POST">
+	@csrf
+	<p><label>Nombre:<input type="text" name="name" /></label></p>
+	<p><label>Versión:<input type="text" name="version" /></label></p>
+	<p><label>Descripción:<textarea name="description" rows="5"></textarea></label></p>
+	<p><button type="submit">Enviar</button></p>
+</form>
 <p><a href="/elementos">elementos</a></p>
 <p><a href="/">home</a></p>
 @endsection('content')
-
-
-<h1>Laravel 8 - Elementos</h1>
-<p><a href="/elementos/PS/5">PS5</a></p>
-<p><a href="/elementos">elementos</a></p>
