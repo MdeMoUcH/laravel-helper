@@ -12,6 +12,10 @@ Información básica de Laravel 8
 -Los controladores se crean desde consola desde la ruta del proyecto y hay que añadir en el archivo de rutas cada controlador creado, el comando es el siguiente:
 php artisan make:controller ElementoController
 
+-En resources/lan/ están los archivos de textos, se puedne descargar desde internet y se pueden añadir campos customizados.
+
+-En config/app.php hay opciones de configuración como el idioma.
+
 
 -Vistas:
 	-Las vistas se colocan en resources/views/
@@ -61,12 +65,14 @@ php artisan make:controller ElementoController
 		
 
 
+-Creación compleja de formularios: php artisan make:request StoreElemento
+	-En app/Http/Requests se crea un archivo para poner las condiciones en la parte de rules.
+	-Se pueden añadir attributes y messages como funciones para cambiar el nombre de los atributos y los mensajes.
 		
-		
 
 
 
 
 
 
-https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=12
+https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=15

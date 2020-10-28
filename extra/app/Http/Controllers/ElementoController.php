@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Elemento;
+//use App\Http\Requests\EditElemento;
 
 class ElementoController extends Controller
 {
@@ -18,13 +19,21 @@ class ElementoController extends Controller
 		
 		return view('elementos.index', compact('elementos'));
 	}
+
 	
 	public function create(){
 		return view('elementos.create');
 	}
+
 	
 	public function store(Request $request){
+			
 		//return $request->all();
+
+		$request->validate([
+			'name' => 'required|max:255',
+			'version' => 'required|max:20']);
+			
 		$elemento = new Elemento();
 		$elemento->name = $request->name;
 		$elemento->version = $request->version;
@@ -33,6 +42,7 @@ class ElementoController extends Controller
 
 		return redirect()->route('elementos.show',$elemento->id);
 	}
+
 	
 	public function show($id, $version = null){
 		//return view('elementos.show',compact('elemento','version'));
@@ -46,12 +56,18 @@ class ElementoController extends Controller
 		$elemento = Elemento::find($id);
 		return view('elementos.show', compact('elemento'));
 	}
+
 	
 	public function edit(Elemento $elemento){
 		return view('elementos.edit', compact('elemento'));
 	}
+
 	
 	public function save(Request $request, Elemento $elemento){
+		$request->validate([
+			'name' => 'required|max:255',
+			'version' => 'required|max:20']);
+			
 		$elemento->name = $request->name;
 		$elemento->version = $request->version;
 		$elemento->description = $request->description;
