@@ -8,6 +8,7 @@ composer create-project  --prefer-dist  laravel/laravel $app 8
 cd $app
 
 cp -R ../extra/* .
+cp -R ../extra/.env .
 
 #composer dump-autoload
 #composer install --no-scripts

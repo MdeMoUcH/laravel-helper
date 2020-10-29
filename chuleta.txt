@@ -90,7 +90,16 @@ php artisan make:controller ElementoController
 		npm install && npm run dev
 		php artisan migrate:refresh
 	-En config/jetstram.php hay opciones para quitar equipos, añadir fotos de perfil, etc..
+	-Para personalizar el dashboard de jetstream se hace con componentes blade y en el archivo resources/views/layouts/app.blade.php
+
+
+-MIDDLEWARES: para poner en las rutas y permitir acceso a ciertos usuarios.
+	-Se crean con php artisan make:middleware CheckAge
+	-Hay que meterlos en app/Http/Middleware/Kernel.php: 'age' => ***
+	-Y en el /routes/web.php de este modo: ->middleware('age');
+	
 
 
 
-https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=18
+-Con ayuda de google y del siguiente curso online en youtube:
+	https://www.youtube.com/watch?v=vEY-b6-2cao&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=1
