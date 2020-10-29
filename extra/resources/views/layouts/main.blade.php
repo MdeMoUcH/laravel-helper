@@ -18,6 +18,9 @@
             body {
                 font-family: 'Nunito';
             }
+            .active{
+				font-weight: bold;
+			}
         </style>
     </head>
     <body class="antialiased">
@@ -68,7 +71,10 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+									<nav><ul>
+                                    <li><a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' : ''}}">home</a></li>
+                                    <li><a href="{{route('elementos.index')}}" class="{{request()->routeIs('elementos.*') ? 'active' : ''}}">elementos</a></li>
+                                    </ul></nav>
                                 </div>
                             </div>
                         </div>

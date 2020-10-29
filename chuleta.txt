@@ -21,6 +21,7 @@ php artisan make:controller ElementoController
 	-Las vistas se colocan en resources/views/
 	-Las plantillas tienen que ser *.blade.php
 	-Se usa la función @yield('elemento') para rellenar las plantillas.
+	-Se usa la función @include('plantilla') para meter una plantilla dentro de otra.
 
 
 -Acceso base de datos:
@@ -71,6 +72,8 @@ php artisan make:controller ElementoController
 		
 
 
+-Se pueden crear las rutas con el route resource que saca de unn controlador todas las rutas según sus métodos
+	-Para ver las rutas en artisan: php artisan r:l
 
 
 

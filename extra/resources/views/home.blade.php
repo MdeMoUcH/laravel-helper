@@ -4,5 +4,5 @@
 
 @section('content')
 <p>Ejemplo de uso básico para laravel</p>
-<p><a href="/elementos">elementos</a></p>
+<p><a href="{{route('elementos.index')}}">elementos</a></p>
 @endsection()

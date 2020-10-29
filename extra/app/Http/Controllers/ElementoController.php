@@ -9,7 +9,8 @@ use App\Models\Elemento;
 
 class ElementoController extends Controller
 {
-	public function __invoke(){
+	//public function __invoke(){
+	public function index(){
 		//return 'Laravel app Elementos<br><a href="/elementos/PS/5">PS5</a><br><br><a href="/">home</a>';
 
 		//$elementos = Elemento::all();
@@ -75,7 +76,7 @@ class ElementoController extends Controller
 	}
 
 	
-	public function save(Request $request, Elemento $elemento){
+	public function update(Request $request, Elemento $elemento){
 		$request->validate([
 			'name' => 'required|max:255',
 			'version' => 'required|max:20']);
@@ -89,5 +90,11 @@ class ElementoController extends Controller
 		$elemento->update($request->all());
 		
 		return redirect()->route('elementos.show',$elemento->id);
+	}
+
+	
+	public function destroy(Elemento $elemento){
+		$elemento->delete();
+		return redirect()->route('elementos.index');
 	}
 }

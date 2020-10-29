@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ElementoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +17,9 @@ use App\Http\Controllers\ElementoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
+/*
 Route::get('/elementos', ElementoController::class)->name('elementos.index');
 
 Route::get('/elementos/crear', [ElementoController::class, 'create'])->name('elementos.create');
@@ -28,7 +30,16 @@ Route::post('/elementos/crear', [ElementoController::class, 'store'])->name('ele
 Route::get('/elementos/{elemento}', [ElementoController::class, 'show'])->name('elementos.show');
 
 Route::get('/elementos/{elemento}/edit', [ElementoController::class, 'edit'])->name('elementos.edit');
-Route::put('/elementos/{elemento}/save', [ElementoController::class, 'save'])->name('elementos.save');
+Route::put('/elementos/{elemento}', [ElementoController::class, 'update'])->name('elementos.update');
+
+Route::delete('/elementos/{elemento}', [ElementoController::class, 'destroy'])->name('elementos.destroy');
+*/
+
+//Lo siguiente sustituye a todo lo de arriba
+//Route::resource('elementos',ElementoController::class);
+
+//Esto cambia la url principal pero hace que funcione
+Route::resource('loquesea',ElementoController::class)->parameters(['loquesea'=>'elemento'])->names('elementos');
 
 
 /*

@@ -4,7 +4,7 @@
 
 @section('content')
 <p><b>crear</b></p>
-<form action="{{route('elementos.save', $elemento)}}" method="POST">
+<form action="{{route('elementos.update', $elemento)}}" method="POST">
 	@csrf
 	@method('put')
 	<p><label>Nombre:<input type="text" name="name" value="{{old('name',$elemento->name)}}" /></label></p>
