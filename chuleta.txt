@@ -75,6 +75,19 @@ php artisan make:controller ElementoController
 -Se pueden crear las rutas con el route resource que saca de unn controlador todas las rutas según sus métodos
 	-Para ver las rutas en artisan: php artisan r:l
 
+-La configuración para el envío de conrreos está en config/mail.php 
+	-Para crear un correo hay que ejecutar: php artisan make:mail ContactanosMailable
+
+
+-JETSTREAM: Sesión, registro, verificación de correo, etc...
+	-Para crear un nuevo proyecto con Jetstram:
+		laravel new project-name --jet
+		php artisan migrate
+	-Para instalar Jetstream en un proyecto existente:
+		php artisan jetstream:install livewire --teams
+		npm install && npm run dev
+		php artisan migrate
+
 
 
 
